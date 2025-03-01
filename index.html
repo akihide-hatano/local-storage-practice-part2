@@ -11,6 +11,7 @@
         <div class="name">
             <label for="">氏名</label>
             <input type="text" id="name">
+            <span id="nameError" class="error"></span>
         </div>
         <div class="gender">
             <label for="gender">性別</label>
@@ -18,6 +19,7 @@
                 <input type="radio" name="gender" id="male" value="男性">男性
                 <input type="radio" name="gender" id="female" value="女性">女性
                 <input type="radio" name="gender" id="others" value="その他">その他
+                <span id="genderError" class="error"></span>
             </div>
         </div>
         <div class="age">
@@ -30,18 +32,22 @@
                 <option value="40代">40代</option>
                 <option value="50代">50代以上</option>
              </select>
+             <span id="ageError" class="error"></span>
         </div>
         <div class="specoality">
             <label for="specoality">特技</label>
             <input type="text" id="specoality">
+            <span id="specoalityError" class="error"></span>
         </div>
         <div class="skills">
             <label for="skills">スキル・経験</label>
             <textarea id="skills"></textarea>
+            <span id="skillsError" class="error"></span>
         </div>
         <div class="pr">
             <label for="pr">自己PR</label>
             <textarea id="pr"></textarea>
+            <span id="pr" class="error"></span>
         </div>
         <button id="submitButton">送信</button>
 

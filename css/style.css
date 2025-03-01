@@ -46,3 +46,10 @@ button:hover{
     opacity: 0.8;
 }
 
+
+/* バリデーションの対応 */
+.error{
+    display: block;
+    color: red;
+    text-align: center;
+}

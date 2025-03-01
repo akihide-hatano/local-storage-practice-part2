@@ -20,6 +20,15 @@ submitButton.addEventListener("click",function(){
     const specoalityInputValue =specoalityInput.value;
     const skillInputValue = skillInput.value;
     const prInputValue = prINput.value;
+
+    //バリデーション
+    // バリデーション
+      if (!inputNameValue) {
+        document.getElementById("nameError").textContent = "氏名を入力してください。";
+        return;
+      } else {
+        document.getElementById("nameError").textContent = "";
+      }
     
       // ローカルストレージに保存
       try{
