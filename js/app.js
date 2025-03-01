@@ -4,7 +4,7 @@ const genderInputs = document.getElementsByName("gender");
 const ageSelect = document.getElementById("ageSelect");
 const specoalityInput = document.getElementById("specoality");
 const skillInput = document.getElementById("skills");
-const prINput = document.getElementById("pr");
+const prInput = document.getElementById("pr");
 
 
 //Buttonの要素を習得
@@ -15,21 +15,45 @@ const submitButton = document.getElementById("submitButton");
 
 submitButton.addEventListener("click",function(){
     const inputNameValue = inputName.value;
-    const genderInputsValue = document.querySelector('input[name="gender"]:checked').value;
+    const selectedGender = document.querySelector('input[name="gender"]:checked');
+    const genderInputsValue = selectedGender?.value;
     const ageSelectValue = ageSelect.value;
     const specoalityInputValue =specoalityInput.value;
     const skillInputValue = skillInput.value;
-    const prInputValue = prINput.value;
+    const prInputValue = prInput.value;
 
-    //バリデーション
     // バリデーション
       if (!inputNameValue) {
         document.getElementById("nameError").textContent = "氏名を入力してください。";
-        return;
       } else {
         document.getElementById("nameError").textContent = "";
       }
-    
+      if(!genderInputsValue){
+        document.getElementById("genderError").textContent = "性別を入力してください";
+      } else{
+        document.getElementById("genderError").textContent = "";
+      }
+      if(!ageSelectValue){
+        document.getElementById("ageError").textContent ="年齢を入力してください";
+      }else{
+        document.getElementById("ageError").textContent ="";
+      }
+      if(!specoalityInputValue){
+        document.getElementById("specoalityError").textContent = "特技を入力してください";
+      }else{
+        document.getElementById("specoalityError").textContent = "";
+      }
+      if(!skillInputValue){
+        document.getElementById("skillsError").textContent = "スキルや経験を入力してください";
+      }else{
+        document.getElementById("skillsError").textContent = "";
+      }
+      if(!prInputValue){
+        document.getElementById("prError").textContent = "自己PRを入力してください";
+      }else{
+        document.getElementById("prError").textContent = "";
+      }
+
       // ローカルストレージに保存
       try{
       localStorage.setItem("name", inputNameValue);

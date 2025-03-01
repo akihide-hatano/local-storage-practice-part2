@@ -52,4 +52,6 @@ button:hover{
     display: block;
     color: red;
     text-align: center;
+    margin-top: 6px;
+    font-size: 15px;
 }
