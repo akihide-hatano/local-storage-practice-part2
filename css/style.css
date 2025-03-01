@@ -27,10 +27,22 @@
 .skills textarea,.pr textarea{
     display: block;
     width: 250px;
-    height: 20px;
+    height: 50px;
+    resize: none;
 }
 
 button{
     display: block;
+    width: 50px;
+    height: 30px;
     margin: 0 auto;
+    background-color: aquamarine;
+    border-radius: 6px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
 }
+
+button:hover{
+   background-color: rgb(16, 138, 128);
+    opacity: 0.8;
+}
+
