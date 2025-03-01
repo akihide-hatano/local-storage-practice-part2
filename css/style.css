@@ -12,7 +12,7 @@
 }
 
 .name input,
-.age input,
+.age select,
 .specoality input{
     width: 200px;
     height: 20px;
@@ -25,6 +25,10 @@
 
 
 
-
+.skills textarea,.pr textarea{
+    display: block;
+    width: 250px;
+    height: 20px;
+}
 
 
