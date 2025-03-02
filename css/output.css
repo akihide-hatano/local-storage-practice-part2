@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+
+#outputArea{
+    display: block;
+    padding-left: 300px;
+}
+
+.name-label,
+.gender-label,
+.age-label,
+.skill-label,
+.pr-label{
+    font-size: 15px;
+}
+
+.name-value,
+.gender-value,
+.age-value,
+.specoality-value,
+.skills-value,
+.pr-value
+{
+    font-size: 22px;
+    font-weight: bold;
+    padding-left: 10px;
+    color: red;
+}

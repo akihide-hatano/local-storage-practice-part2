@@ -67,5 +67,4 @@ submitButton.addEventListener("click",function(){
         console.error("保存されていません");
         alert("保存に失敗しました");
       }
-
 });
