@@ -1,65 +1,108 @@
-//outPutAreaの有無の確認
     const outputArea = document.getElementById("outputArea");
     if (outputArea) {
-     
-    try {
-    //localStageから要素を取ってくる
-        const outName = localStorage.getItem("name");
-        const outGender = localStorage.getItem("gender");
-        const outAge = localStorage.getItem("age");
-        const outSpecoality = localStorage.getItem("specoality");
-        const outSkills = localStorage.getItem("skills");
-        const outPr = localStorage.getItem("pr");
+        try {
+            //要素を取得
+            const outName = localStorage.getItem("name");
+            const outGender = localStorage.getItem("gender");
+            const outAge = localStorage.getItem("age");
+            const outSpecoality = localStorage.getItem("specoality");
+            const outSkills = localStorage.getItem("skills");
+            const outPr = localStorage.getItem("pr");
+            //分岐させる
+            if (outName || outGender || outAge || outSpecoality || outSkills || outPr) {
+                // 氏名
+                const nameP = document.createElement("div");
+                //横並び
+                nameP.style.display = "flex";
+                nameP.style.alignItems = "center";
+                //pタグを挿入
+                const nameLabelSpan = document.createElement("p");
+                nameLabelSpan.classList.add("name-label");
+                nameLabelSpan.textContent = "氏名: ";
+                nameP.appendChild(nameLabelSpan);
+                //spanタグでlocalDtorageから取ってきたものを表示する
+                const nameSpan = document.createElement("span");
+                nameSpan.classList.add("name-value");
+                nameSpan.textContent = outName ?? "未設定";
+                nameP.appendChild(nameSpan);
+                outputArea.appendChild(nameP);
 
-        if (outName || outGender || outAge || outSpecoality || outSkills || outPr) {
-            //p要素を作成し、outputAreaに追加する
-            // 氏名部分を span 要素で囲み、クラスを追加する
-            const nameP = document.createElement("p");
-            //ラベル部分をspan要素を囲む
-            const nameLabelSpan = document.createElement("p");
-            nameLabelSpan.classList.add("name-label");
-            nameLabelSpan.textContent = "氏名: ";
-            nameP.appendChild(nameLabelSpan);
-            //名前の部分をspan要素を囲む
-            const nameSpan = document.createElement("span");
-            nameSpan.classList.add("name-value"); // 氏名部分のクラス
-            nameSpan.textContent = outName ?? "未設定";
-            nameP.appendChild(nameSpan);
-            outputArea.appendChild(nameP);
+                // 性別
+                const genderP = document.createElement("div");
+                genderP.style.display = "flex";
+                genderP.style.alignItems = "center";
+                const genderLabelSpan = document.createElement("p");
+                genderLabelSpan.classList.add("gender-label");
+                genderLabelSpan.textContent = "性別: ";
+                genderP.appendChild(genderLabelSpan);
+                const genderSpan = document.createElement("span");
+                genderSpan.classList.add("gender-value");
+                genderSpan.textContent = outGender ?? "未設定";
+                genderP.appendChild(genderSpan);
+                outputArea.appendChild(genderP);
 
-            //性別をoutputAreaに追加する
-            const genderP = document.createElement("p");
-            //ラベル部分をspan要素を囲む
-            const genderLabelSpan = document.createElement("p");
-            genderLabelSpan.classList.add("gender-label");
-            genderLabelSpan.textContent = "性別: ";
-            nameP.appendChild(genderLabelSpan);
+                // 年齢
+                const ageP = document.createElement("div");
+                ageP.style.display = "flex";
+                ageP.style.alignItems = "center";
+                const ageLabelSpan = document.createElement("p");
+                ageLabelSpan.classList.add("age-label");
+                ageLabelSpan.textContent = "年齢: ";
+                ageP.appendChild(ageLabelSpan);
+                const ageSpan = document.createElement("span");
+                ageSpan.classList.add("age-value");
+                ageSpan.textContent = outAge ?? "未設定";
+                ageP.appendChild(ageSpan);
+                outputArea.appendChild(ageP);
 
-            genderP.textContent =`性別:${outGender ?? "未設定"}`;
-            outputArea.appendChild(genderP);
-            //年齢をoutputAreaに追加する
-            const ageP = document.createElement("p");
-            ageP.textContent =  `年齢:${outAge ?? "未設定"}`;
-            outputArea.appendChild(ageP);
-            //特技をoutputAreaに追加する
-            const specoalityP = document.createElement("p");
-            specoalityP.textContent =  `特技:${outSpecoality ?? "未設定"}`;
-            outputArea.appendChild(specoalityP);
-            //skillをoutputAreaに追加する
-            const skillP = document.createElement("p");
-            skillP.textContent =  `スキル:${outSkills ?? "未設定"}`;
-            outputArea.appendChild(skillP);
-            //skillをoutputAreaに追加する
-            const prP = document.createElement("p");
-            prP.textContent =  `自己pr:${outPr ?? "未設定"}`;
-            outputArea.appendChild(prP);
+                // 特技
+                const specoalityP = document.createElement("div");
+                specoalityP.style.display = "flex";
+                specoalityP.style.alignItems = "center";
+                const specoalityLabelSpan = document.createElement("p");
+                specoalityLabelSpan.classList.add("specoality-label");
+                specoalityLabelSpan.textContent = "特技: ";
+                specoalityP.appendChild(specoalityLabelSpan);
+                const specoalitySpan = document.createElement("span");
+                specoalitySpan.classList.add("specoality-value");
+                specoalitySpan.textContent = outSpecoality ?? "未設定";
+                specoalityP.appendChild(specoalitySpan);
+                outputArea.appendChild(specoalityP);
 
+                // スキル
+                const skillsP = document.createElement("div");
+                skillsP.style.display = "flex";
+                skillsP.style.alignItems = "center";
+                const skillsLabelSpan = document.createElement("p");
+                skillsLabelSpan.classList.add("skills-label");
+                skillsLabelSpan.textContent = "スキル: ";
+                skillsP.appendChild(skillsLabelSpan);
+                const skillsSpan = document.createElement("span");
+                skillsSpan.classList.add("skills-value");
+                skillsSpan.textContent = outSkills ?? "未設定";
+                skillsP.appendChild(skillsSpan);
+                outputArea.appendChild(skillsP);
 
-        } else {
-            outputArea.textContent = "データが見つかりませんでした。";
+                // 自己 PR
+                const prP = document.createElement("div");
+                prP.style.display = "flex";
+                prP.style.alignItems = "center";
+                const prLabelSpan = document.createElement("p");
+                prLabelSpan.classList.add("pr-label");
+                prLabelSpan.textContent = "自己PR: ";
+                prP.appendChild(prLabelSpan);
+                const prSpan = document.createElement("span");
+                prSpan.classList.add("pr-value");
+                prSpan.textContent = outPr ?? "未設定";
+                prP.appendChild(prSpan);
+                outputArea.appendChild(prP);
+            } else {
+                outputArea.textContent = "データが見つかりませんでした。";
+            }
+        } catch (e) {
+            console.error("ローカルストレージからのデータ取得中にエラーが発生しました:", e);
+            outputArea.textContent = "データの取得に失敗しました。";
         }
-    } catch (e) {
-        console.error("ローカルストレージからのデータ取得中にエラーが発生しました:", e);
-        outputArea.textContent = "データの取得に失敗しました。";
+    } else {
+        console.error("outputArea 要素が見つかりません。");
     };
-}
