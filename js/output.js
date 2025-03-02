@@ -13,11 +13,28 @@
 
         if (outName || outGender || outAge || outSpecoality || outSkills || outPr) {
             //p要素を作成し、outputAreaに追加する
+            // 氏名部分を span 要素で囲み、クラスを追加する
             const nameP = document.createElement("p");
-            nameP.textContent = `氏名: ${outName ?? "未設定"}`;
+            //ラベル部分をspan要素を囲む
+            const nameLabelSpan = document.createElement("p");
+            nameLabelSpan.classList.add("name-label");
+            nameLabelSpan.textContent = "氏名: ";
+            nameP.appendChild(nameLabelSpan);
+            //名前の部分をspan要素を囲む
+            const nameSpan = document.createElement("span");
+            nameSpan.classList.add("name-value"); // 氏名部分のクラス
+            nameSpan.textContent = outName ?? "未設定";
+            nameP.appendChild(nameSpan);
             outputArea.appendChild(nameP);
+
             //性別をoutputAreaに追加する
             const genderP = document.createElement("p");
+            //ラベル部分をspan要素を囲む
+            const genderLabelSpan = document.createElement("p");
+            genderLabelSpan.classList.add("gender-label");
+            genderLabelSpan.textContent = "性別: ";
+            nameP.appendChild(genderLabelSpan);
+
             genderP.textContent =`性別:${outGender ?? "未設定"}`;
             outputArea.appendChild(genderP);
             //年齢をoutputAreaに追加する
